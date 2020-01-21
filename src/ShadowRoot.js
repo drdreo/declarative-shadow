@@ -9,7 +9,11 @@ export class ShadowRoot extends HTMLElement {
   }
 
   stamp() {
-    const parent = this.parentNode;
+    const parent = this.parentElement; // this.parentNode
+    if (!parent) {
+      throw 'declarative-shadow-dom needs a perentElement to stamp to';
+    }
+
     let shadowRoot = parent.shadowRoot;
     if (!shadowRoot) {
       shadowRoot = parent.attachShadow({ mode: this.getAttribute('mode') || 'open' });

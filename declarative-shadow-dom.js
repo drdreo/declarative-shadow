@@ -17,7 +17,6 @@ customElements.define('declarative-shadow-dom', class extends HTMLTemplateElemen
         //this.appendToParentsShadowRoot();
     }
     appendToParentsShadowRoot(){
-        console.log(this.parentElement);
 
         const parentElement = this.parentElement;
         const mode = this.getAttribute('mode');
