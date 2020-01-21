@@ -11,7 +11,7 @@ export class ShadowRoot extends HTMLElement {
   stamp() {
     const parent = this.parentElement; // this.parentNode
     if (!parent) {
-      throw 'declarative-shadow-dom needs a perentElement to stamp to';
+      return; // created imperatively: document.createElement("shadow-root");
     }
 
     let shadowRoot = parent.shadowRoot;

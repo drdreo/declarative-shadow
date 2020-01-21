@@ -81,7 +81,7 @@ describe('ShadowRoot', () => {
     expect(el.shadowRoot).to.be.null;
     expect(el.childElementCount).to.equal(2);
     expect(el.children.length).to.equal(2);
-    expect(el.children[1]).to.be.an("HTMLUnknownElement");
+    //expect(shadow).to.be.an("HTMLUnknownElement");
 
   });
 
@@ -147,18 +147,18 @@ describe('ShadowRoot', () => {
     const el = await fixture(html`<div></div>`);
     const shadow = document.createElement('shadow-root');
     shadow.mode = "open";
-    el.appendChild(s);
-    assert(el.hasChildNodes());
-    assert(!el.shadowRoot);
+    el.appendChild(shadow);
+
+    expect(el.hasChildNodes()).to.be.true;
+    expect(el.shadowRoot).to.be.null;
 
     // Then, we *serialize* and *deserialize* |p|.
-    const inner_html = el.innerHTML;
-    assert(inner_html === '<shadowroot mode="open"></shadowroot>');
+    expect(el).lightDom.to.equal('<shadowroot mode="open"></shadowroot>');
     el.innerHTML = inner_html;
 
     // Now, |p| changed.
-    assert(!el.hasChildNodes());
-    assert(el.shadowRoot);
+    assert(!el.hasChildNodes(), "dont have childs");
+    assert(el.shadowRoot, "have shadow root");
 
   });
 
