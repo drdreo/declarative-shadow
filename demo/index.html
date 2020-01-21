@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    div {
+      color: #574cbb;
+    }
+  </style>
+</head>
+
+<body>
+  <my-test id="shadow-root">
+    <shadow-root mode="open">
+      <h2>Shadow h2</h2>
+      <slot></slot>
+      <div>Shadow div</div>
+    </shadow-root>
+    <div>Light content</div>
+  </my-test>
+
+  <div id="declarative-shadow-dom">
+    <template is="declarative-shadow-dom" mode="open">
+      <!-- That is your #shadow-root -->
+      <style>
+        div {
+          color: #daa520;
+        }
+      </style>
+      <slot name="header"></slot>
+      <div id="panes">
+        <slot name="solves"></slot>
+      </div>
+      <slot></slot>
+    </template>
+
+    <ul slot="solves">
+      <li>Ever wanted declarative syntax for Shadow DOM?</li>
+      <li>Scoped CSS without JS magic?</li>
+      <li>Or just felt jealous, that spec editors can use this syntax and you cannot?</li>
+    </ul>
+
+    <h1 slot="header">declarative-shadow-dom</h1>
+
+
+  </div>
+
+  <script type="module">
+    import '../shadow-root.js';
+    import '../declarative-shadow-dom.js';
+  </script>
+</body>
+
+</html>
