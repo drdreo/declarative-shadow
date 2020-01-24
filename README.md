@@ -1,6 +1,9 @@
 # \<shadow-root>
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+[![Build Status](https://travis-ci.com/drdreo/declarative-shadow.svg?branch=master)](https://travis-ci.com/drdreo/declarative-shadow)
+
+This is a protoype repository to test and showcase the functionality and needs of a declarative shadow DOM approach discussed at [GitHub](https://github.com/whatwg/dom/issues/510).
+It's coherent with my master thesis: "Declarative shadow DOM"
 
 ## Installation
 ```bash
@@ -16,24 +19,29 @@ npm i shadow-root
 <shadow-root></shadow-root>
 ```
 
-## Testing with Karma
-To run the suite of karma tests, run
+# Running
+## Local Demo with `es-dev-server`
+To run a local development server that serves the basic demo located in `demo/index.html`:
+```bash
+npm start
+```
+
+## Testing (with Karma)
+I've used the [open-wc](https://github.com/open-wc/open-wc) for Web Component testing.
+
+To run the suite of karma tests:
 ```bash
 npm run test
 ```
-or to run them in compatibility mode for legacy browsers
-```bash
-npm run test:compatibility
-```
 
-To run the tests in watch mode (for <abbr title="test driven development">TDD</abbr>, for example), run
-
+To run the tests in watch mode:
 ```bash
 npm run test:watch
 ```
-or
+
+To run the tests with coverage check:
 ```bash
-npm run test:compatibility
+npm run test:coverage
 ```
 
 ## Testing with Karma via BrowserStack
@@ -51,15 +59,3 @@ or
 ```bash
 npm run test:prune-snapshots
 ```
-
-
-## Local Demo with `es-dev-server`
-```bash
-npm start
-```
-To run a local development server that serves the basic demo located in `demo/index.html`
-
-```bash
-npm start:compatibility
-```
-To run a local development server in compatibility mode for older browsers that serves the basic demo located in `demo/index.html`
