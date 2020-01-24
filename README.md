@@ -7,16 +7,23 @@ It's coherent with my master thesis: "Declarative shadow DOM"
 
 ## Installation
 ```bash
-npm i shadow-root
+npm i
 ```
 
 ## Usage
 ```html
-<script type="module">
-  import 'shadow-root/shadow-root.js';
-</script>
+<my-test id="shadow-root">
+  <shadow-root mode="open">
+    <h2>Shadow h2</h2>
+    <slot></slot>
+    <div>Shadow div</div>
+  </shadow-root>
+  <div>Light content</div>
+</my-test>
 
-<shadow-root></shadow-root>
+<script type="module">
+  import 'shadow-root.js';
+</script>
 ```
 
 # Running
