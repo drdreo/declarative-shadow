@@ -51,13 +51,13 @@ To run the tests with coverage check:
 npm run test:coverage
 ```
 
-## Testing with Karma via BrowserStack
+### Testing via BrowserStack
 To run the suite of karma tests in BrowserStack, run
 ```bash
 npm run test:bs
 ```
 
-## Managing Test Snapshots
+### Managing Test Snapshots
 You can manage the test snapshots using
 ```bash
 npm run test:update-snapshots
