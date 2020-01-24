@@ -12,8 +12,8 @@ npm i
 
 ## Usage
 ```html
-<my-test id="shadow-root">
-  <shadow-root mode="open">
+<my-test id="shadow-host">
+  <shadow-root mode="open | closed">
     <h2>Shadow h2</h2>
     <slot></slot>
     <div>Shadow div</div>
