@@ -8,17 +8,19 @@
   "module": "index.js",
   "scripts": {
     "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
-    "test": "karma start --coverage",
+    "test": "karma start",
+    "test:coverage": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:bs": "karma start karma.bs.config.js --coverage"
   },
   "devDependencies": {
-    "es-dev-server": "^1.23.0",
+    "@open-wc/testing": "^2.0.0",
     "@open-wc/testing-karma": "^3.0.0",
-    "deepmerge": "^3.2.0",
     "@open-wc/testing-karma-bs": "^1.0.0",
-    "@open-wc/testing": "^2.0.0"
+    "deepmerge": "^3.2.0",
+    "es-dev-server": "^1.23.0",
+    "lit-html": "^1.1.2"
   }
 }

@@ -146,19 +146,20 @@ describe('ShadowRoot', () => {
     // Construct a dom tree in an imperative way
     const el = await fixture(html`<div></div>`);
     const shadow = document.createElement('shadow-root');
-    shadow.mode = "open";
+    shadow.setAttribute("mode","open");// shadow.mode = "open";
     el.appendChild(shadow);
 
     expect(el.hasChildNodes()).to.be.true;
     expect(el.shadowRoot).to.be.null;
 
     // Then, we *serialize* and *deserialize* |p|.
-    expect(el).lightDom.to.equal('<shadowroot mode="open"></shadowroot>');
+    const inner_html = el.innerHTML;
+    expect(el.innerHTML).to.equal('<shadow-root mode="open"></shadow-root>');
     el.innerHTML = inner_html;
 
-    // Now, |p| changed.
-    assert(!el.hasChildNodes(), "dont have childs");
-    assert(el.shadowRoot, "have shadow root");
+    // Now, |p| changed nad has a shadow Root
+    expect(el.hasChildNodes()).to.be.false;
+    expect(el.shadowRoot).to.exist;
 
   });
 
