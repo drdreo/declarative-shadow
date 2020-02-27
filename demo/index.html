@@ -2,54 +2,84 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <style>
-    div {
-      color: #574cbb;
-    }
-  </style>
+    <meta charset="utf-8">
+    <style>
+        div {
+            color: #574cbb;
+        }
+    </style>
 </head>
 
 <body>
-  <my-test id="shadow-root">
+<my-test id="shadow-root">
     <shadow-root mode="open">
-      <h2>Shadow h2</h2>
-      <slot></slot>
-      <div>Shadow div</div>
+        <h2>Shadow h2</h2>
+        <slot></slot>
+        <div>Shadow div</div>
     </shadow-root>
     <div>Light content</div>
-  </my-test>
+</my-test>
 
-  <div id="declarative-shadow-dom">
+<div id="declarative-shadow-dom">
     <template is="declarative-shadow-dom" mode="open">
-      <!-- That is your #shadow-root -->
-      <style>
-        div {
-          color: #daa520;
-        }
-      </style>
-      <slot name="header"></slot>
-      <div id="panes">
-        <slot name="solves"></slot>
-      </div>
-      <slot></slot>
+        <!-- That is your #shadow-root -->
+        <style>
+            div {
+                color: #daa520;
+            }
+        </style>
+        <slot name="header"></slot>
+        <div id="panes">
+            <slot name="solves"></slot>
+        </div>
+        <slot></slot>
     </template>
 
     <ul slot="solves">
-      <li>Ever wanted declarative syntax for Shadow DOM?</li>
-      <li>Scoped CSS without JS magic?</li>
-      <li>Or just felt jealous, that spec editors can use this syntax and you cannot?</li>
+        <li>Ever wanted declarative syntax for Shadow DOM?</li>
+        <li>Scoped CSS without JS magic?</li>
+        <li>Or just felt jealous, that spec editors can use this syntax and you cannot?</li>
     </ul>
 
     <h1 slot="header">declarative-shadow-dom</h1>
 
 
-  </div>
+</div>
 
-  <script type="module">
-    import '../shadow-root.js';
-    import '../declarative-shadow-dom.js';
-  </script>
+<div>
+    <template id="template">
+        <my-test id="tpl-shadow-host">
+            <shadow-root mode="open">
+                <h2>Shadow h2</h2>
+                <slot></slot>
+                <h5>Shadow h5</h5>
+            </shadow-root>
+            <div>Light content</div>
+        </my-test>
+    </template>
+    <div id="tpl-container"></div>
+</div>
+
+<my-test>
+    <shadow-root mode="open">
+        <h2>Shadow h2</h2>
+        <slot></slot>
+        <script>
+            const root = document.currentScript.parentNode;
+            const host = root.parentNode;
+            host.classList.add("executed");
+            root.removeChild(root.children[2]);
+            console.log(root.children);
+
+        </script>
+        <h5>Removed</h5>
+    </shadow-root>
+    <div>Light content</div>
+</my-test>
+
+<script type="module">
+    import "../src/index";
+</script>
 </body>
 
 </html>

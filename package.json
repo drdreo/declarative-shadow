@@ -1,8 +1,8 @@
 {
   "name": "shadow-root",
-  "version": "0.0.0",
-  "description": "Webcomponent shadow-root following open-wc recommendations",
-  "author": "shadow-root",
+  "version": "0.0.1",
+  "description": "WebComponent shadow-root following open-wc recommendations",
+  "author": "Andreas K. Hahn",
   "license": "MIT",
   "main": "index.js",
   "module": "index.js",
