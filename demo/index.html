@@ -3,80 +3,146 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Declarative Shadow Root</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
     <style>
+        html {
+            font-family: Roboto, sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #222;
+        }
+
         div {
-            color: #574cbb;
+            color: dodgerblue;
+        }
+
+        p {
+            color: #222222;
+        }
+
+        .container {
+            padding: 2rem 5rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Oswald', sans-serif;
+            color: dodgerblue;
         }
     </style>
 </head>
 
 <body>
-<my-test id="shadow-root">
-    <shadow-root mode="open">
-        <h2>Shadow h2</h2>
-        <slot></slot>
-        <div>Shadow div</div>
-    </shadow-root>
-    <div>Light content</div>
-</my-test>
+<div class="container">
 
-<div id="declarative-shadow-dom">
-    <template is="declarative-shadow-dom" mode="open">
-        <!-- That is your #shadow-root -->
-        <style>
-            div {
-                color: #daa520;
-            }
-        </style>
-        <slot name="header"></slot>
-        <div id="panes">
-            <slot name="solves"></slot>
-        </div>
-        <slot></slot>
-    </template>
+    <h1>Shadow Root Playground</h1>
+    <p>
+        The new &lt;shadow-root&gt; element can be used inside any valid html element that supports a shadow-root.
+        The element needs to have an attribute mode="open|closed". It will encapsulate the parent and attaches a
+        shadow-root to it. Any style defined inside will be encapsulated like a Web Component does.
 
-    <ul slot="solves">
-        <li>Ever wanted declarative syntax for Shadow DOM?</li>
-        <li>Scoped CSS without JS magic?</li>
-        <li>Or just felt jealous, that spec editors can use this syntax and you cannot?</li>
-    </ul>
+        An example can be found at <a href="profile/index.html">profile-card</a> or check out my tests below.
+    </p>
 
-    <h1 slot="header">declarative-shadow-dom</h1>
+    <h1>Component with declarative shadow-root</h1>
+    <my-test id="shadow-root">
+        <shadow-root mode="open">
+            <style>
+                h2 {
+                    color: crimson;
+                }
 
+                div {
+                    color: #daa520;
+                }
+            </style>
+            <h2>Shadow h2</h2>
+            <slot></slot>
+            <div>Shadow div</div>
+        </shadow-root>
+        <div>Light content</div>
+    </my-test>
+
+    <h1>Component using template as base</h1>
+    <div id="declarative-shadow-dom">
+        <template is="declarative-shadow-dom" mode="open">
+            <style>
+                h3 {
+                    color: crimson;
+                }
+
+                div {
+                    color: #daa520;
+                }
+            </style>
+            <slot name="header"></slot>
+            <div id="panes">
+                <h3>Panes</h3>
+                <slot name="solves"></slot>
+            </div>
+            <slot></slot>
+        </template>
+
+        <ul slot="solves">
+            <li>Ever wanted declarative syntax for Shadow DOM?</li>
+            <li>Scoped CSS without JS magic?</li>
+            <li>Or just felt jealous, that spec editors can use this syntax and you cannot?</li>
+        </ul>
+
+        <h2 slot="header">declarative-shadow-dom</h2>
+
+
+    </div>
+
+    <h1>Component inside template</h1>
+    <div>
+        <template id="template">
+            <my-test id="tpl-shadow-host">
+                <shadow-root mode="open">
+                    <h2>Shadow h2</h2>
+                    <slot></slot>
+                    <h5>Shadow h5</h5>
+                </shadow-root>
+                <div>Light content</div>
+            </my-test>
+        </template>
+        <div id="tpl-container"></div>
+    </div>
+
+    <h1>Component with script</h1>
+    <my-test>
+        <shadow-root mode="open">
+            <style>
+                h2 {
+                    color: crimson;
+                }
+
+                div {
+                    color: #daa520;
+                }
+            </style>
+            <h2>Shadow h2</h2>
+            <slot></slot>
+            <div>Removed</div>
+            <script>
+                const root = document.currentScript.parentNode;
+                const host = root.parentNode;
+                host.classList.add("executed");
+                root.querySelector("div").remove();
+            </script>
+        </shadow-root>
+        <div>Light content</div>
+    </my-test>
+
+    <h1>Ordinary Component</h1>
+    <ordinary-component></ordinary-component>
 
 </div>
-
-<div>
-    <template id="template">
-        <my-test id="tpl-shadow-host">
-            <shadow-root mode="open">
-                <h2>Shadow h2</h2>
-                <slot></slot>
-                <h5>Shadow h5</h5>
-            </shadow-root>
-            <div>Light content</div>
-        </my-test>
-    </template>
-    <div id="tpl-container"></div>
-</div>
-
-<my-test>
-    <shadow-root mode="open">
-        <h2>Shadow h2</h2>
-        <slot></slot>
-        <script>
-            const root = document.currentScript.parentNode;
-            const host = root.parentNode;
-            host.classList.add("executed");
-            root.removeChild(root.children[2]);
-            console.log(root.children);
-
-        </script>
-        <h5>Removed</h5>
-    </shadow-root>
-    <div>Light content</div>
-</my-test>
-
 <script type="module">
     import "../src/index";
 </script>

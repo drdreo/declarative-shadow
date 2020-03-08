@@ -1,0 +1,57 @@
+h2 {
+    color: crimson;
+}
+
+ul {
+    color: #eee;
+    list-style: circle;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+p {
+    font-weight: bold;
+}
+
+:host {
+    display: block;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+    background: #151515;
+    overflow: hidden;
+    font-family: 'Bellota Text', cursive;
+}
+
+::slotted([slot="header"]) {
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: crimson;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 80px);
+    padding: 40px 1rem;
+    color: crimson;
+}
+

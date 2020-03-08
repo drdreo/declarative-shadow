@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+}
+
+div, p, span, a {
+    color: dodgerblue;
+}
+
+li {
+    color: dodgerblue;
+}
+
+.header {
+    color: mediumseagreen;
+}
+
+.container {
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    color: dodgerblue;
+}

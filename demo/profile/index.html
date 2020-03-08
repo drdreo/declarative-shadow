@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Declarative Shadow Root Profile Example</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+<body>
+
+<!--Slots dont make much sense in this use-case since the goal here is not to make them reusable, but to apply style encapsulation-->
+<div class="container">
+    <h1 class="header">Profile Card</h1>
+    <div class="profile-card">
+        <shadow-root mode="open">
+            <link rel="stylesheet" type="text/css" href="card.css">
+            <div class="header">
+                <slot name="header"></slot>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
+                     alt="Albert Einstein"/>
+            </div>
+            <div class="container">
+                <p>Web Developer</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Web Component</li>
+                </ul>
+            </div>
+        </shadow-root>
+        <div slot="header">John D. Eveloper</div>
+    </div>
+
+    <!--    <h1 class="header">Profile Card without Shadow Root</h1>-->
+    <!--    <div class="profile-card">-->
+    <!--        <link rel="stylesheet" type="text/css" href="card.css">-->
+    <!--        <div class="header">-->
+    <!--            <slot name="header"></slot>-->
+    <!--            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"-->
+    <!--                 alt="Albert Einstein"/>-->
+    <!--        </div>-->
+    <!--        <div class="container">-->
+    <!--            <p>Web Developer</p>-->
+    <!--            <ul>-->
+    <!--                <li>HTML</li>-->
+    <!--                <li>CSS</li>-->
+    <!--                <li>Web Component</li>-->
+    <!--            </ul>-->
+    <!--        </div>-->
+    <!--        <div slot="header">Andreas Hahn (light)</div>-->
+    <!--    </div>-->
+</div>
+
+
+<script type="module">
+    import "../../src";
+</script>
+</body>
+</html>

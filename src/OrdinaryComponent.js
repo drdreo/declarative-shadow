@@ -5,6 +5,6 @@ export class OrdinaryComponent extends HTMLElement {
     }
 
     get template() {
-        return `<div>Ordinary</div>`;
+        return `<div class="ordinary-text">Ordinary</div>`;
     }
 }

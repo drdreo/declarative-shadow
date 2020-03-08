@@ -5,9 +5,6 @@ export class ShadowRoot extends HTMLElement {
         this.stamp();
     }
 
-    connectedCallback() {
-    }
-
     stamp() {
         const parent = this.parentElement; // this.parentNode
         if (!parent) {
