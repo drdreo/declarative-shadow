@@ -104,9 +104,18 @@
         <template id="template">
             <my-test id="tpl-shadow-host">
                 <shadow-root mode="open">
+                    <style>
+                        h2 {
+                            color: crimson;
+                        }
+
+                        div {
+                            color: #daa520;
+                        }
+                    </style>
                     <h2>Shadow h2</h2>
                     <slot></slot>
-                    <h5>Shadow h5</h5>
+                    <div>Shadow div</div>
                 </shadow-root>
                 <div>Light content</div>
             </my-test>
@@ -145,6 +154,11 @@
 </div>
 <script type="module">
     import "../src/index";
+
+    // clone the template and stamp it
+    const tpl = document.querySelector("#template");
+    const parent = tpl.parentNode;
+    parent.appendChild(tpl.content.cloneNode(true));
 </script>
 </body>
 

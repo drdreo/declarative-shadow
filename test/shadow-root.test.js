@@ -11,7 +11,7 @@ describe("Ordinary Web Component", async () => {
             `);
 
         expect(el.shadowRoot).to.exist;
-        expect(el).shadowDom.to.equal(`<div>Ordinary</div>`);
+        expect(el).shadowDom.to.equal(`<div class="ordinary-text">Ordinary</div>`);
         expect(el).lightDom.to.equal("");
         expect(el.childElementCount).to.equal(0);
     });
