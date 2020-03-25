@@ -3,19 +3,19 @@ import {html, fixture, elementUpdated, expect} from "@open-wc/testing";
 import "../src/index";
 // https://gist.github.com/tomalec/a20af4eee86640defdc7aeccccc78c1c#file-declarative-shadow-dom-test-html-L8-L12
 
-describe("Ordinary Web Component", async () => {
-    it("should have a shadowRoot", async () => {
-        const el = await fixture(html`
-                <ordinary-component>
-                </ordinary-component>
-            `);
-
-        expect(el.shadowRoot).to.exist;
-        expect(el).shadowDom.to.equal(`<div class="ordinary-text">Ordinary</div>`);
-        expect(el).lightDom.to.equal("");
-        expect(el.childElementCount).to.equal(0);
-    });
-});
+// describe("Ordinary Web Component", async () => {
+//     it("should have a shadowRoot", async () => {
+//         const el = await fixture(html`
+//                 <ordinary-component>
+//                 </ordinary-component>
+//             `);
+//
+//         expect(el.shadowRoot).to.exist;
+//         expect(el).shadowDom.to.equal(`<div class="ordinary-text">Ordinary</div>`);
+//         expect(el).lightDom.to.equal("");
+//         expect(el.childElementCount).to.equal(0);
+//     });
+// });
 
 describe("ShadowRoot", () => {
     it("should attach a shadowRoot to the element", async () => {
