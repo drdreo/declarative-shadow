@@ -2,10 +2,10 @@ export class ShadowRoot extends HTMLElement {
 
     constructor() {
         super();
-        this.stamp();
+        this.attach();
     }
 
-    stamp() {
+    attach() {
         const parent = this.parentElement; // this.parentNode
         if (!parent) {
             return; // created imperatively: document.createElement("shadow-root");
@@ -19,9 +19,9 @@ export class ShadowRoot extends HTMLElement {
 
         let shadowRoot = parent.shadowRoot;
         if (!shadowRoot) {
-            shadowRoot = parent.attachShadow({mode});
+            const delegatesFocus = this.hasAttribute("delegatesFocus");
+            shadowRoot = parent.attachShadow({mode, delegatesFocus});
         } else {
-            // parent already has a shadowRoot attached
             throw new Error(`Shadow root already attached to <${parent.tagName}>`);
         }
 
@@ -29,8 +29,6 @@ export class ShadowRoot extends HTMLElement {
             let fragment = document.importNode(node, true);
             shadowRoot.appendChild(fragment);
         }
-
         parent.removeChild(this);
     }
-
 }

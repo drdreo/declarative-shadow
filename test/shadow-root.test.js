@@ -1,4 +1,4 @@
-import {html, fixture, elementUpdated, expect} from "@open-wc/testing";
+import {elementUpdated, expect, fixture, html} from "@open-wc/testing";
 
 import "../src/index";
 // https://gist.github.com/tomalec/a20af4eee86640defdc7aeccccc78c1c#file-declarative-shadow-dom-test-html-L8-L12
@@ -198,6 +198,33 @@ describe("ShadowRoot", () => {
             });
         });
 
+    });
+
+    describe("delegatesFocus Attribute", () => {
+
+        it("should set the delegatesFocus option", async () => {
+            const el = await fixture(html`
+                  <my-test id="shadow-root">
+                    <shadow-root mode="open" delegatesFocus>
+                        <h2>Shadow h2</h2>
+                    </shadow-root>
+                  </my-test>
+                `);
+            expect(el.shadowRoot).to.exist;
+            expect(el.shadowRoot.delegatesFocus).to.be.true;
+        });
+
+        it("should NOT set the delegatesFocus option", async () => {
+            const el = await fixture(html`
+                  <div id="shadow-root">
+                    <shadow-root mode="open">
+                        <h2>Shadow h2</h2>
+                    </shadow-root>
+                  </div>
+                `);
+            expect(el.shadowRoot).to.exist;
+            expect(el.shadowRoot.delegatesFocus).to.be.false;
+        });
     });
 
     //NOTE: tested manually

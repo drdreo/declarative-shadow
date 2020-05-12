@@ -135,10 +135,13 @@
                 div {
                     color: #daa520;
                 }
+                :host(.executed) *{
+                    color: rebeccapurple;
+                }
             </style>
-            <h2>Shadow h2</h2>
+            <h2>Shadow h2 (should be purple)</h2>
             <slot></slot>
-            <div>Removed</div>
+            <div>Should be removed!</div>
             <script>
                 const root = document.currentScript.parentNode;
                 const host = root.parentNode;
