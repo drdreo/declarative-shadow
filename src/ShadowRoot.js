@@ -1,17 +1,21 @@
 export class ShadowRoot extends HTMLElement {
 
+    // attachment called inside constructor due to testing environment not able to catch that lifecyle method
+    // It is also possible to call the attachment during connectedCallback().
     constructor() {
         super();
         this.attach();
     }
 
     attach() {
-        const parent = this.parentElement; // this.parentNode
+        // parentNode || parentElement -->  only difference comes when a node's parentNode is not an element. If so, parentElement is null.
+        const parent = this.parentElement;
         if (!parent) {
+            console.warn("No parent element!");
             return; // created imperatively: document.createElement("shadow-root");
         }
 
-        // if there is no mode defined, it should do nothing
+        // if there is an invalid mode, remain inert
         const mode = this.getAttribute("mode");
         if (mode !== "open" && mode !== "closed") {
             return;
@@ -25,9 +29,9 @@ export class ShadowRoot extends HTMLElement {
             throw new Error(`Shadow root already attached to <${parent.tagName}>`);
         }
 
-        for (let node of this.childNodes) {
-            let fragment = document.importNode(node, true);
-            shadowRoot.appendChild(fragment);
+        // move all children to the parent's shadow root
+        while (this.firstChild) {
+            shadowRoot.appendChild(this.firstChild);
         }
         parent.removeChild(this);
     }

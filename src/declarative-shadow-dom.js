@@ -1,3 +1,5 @@
+// created by tomalec https://github.com/tomalec/declarative-shadow-dom/blob/master/declarative-shadow-dom.js
+
 export default class extends HTMLTemplateElement {
     static get observedAttributes() {
         return [];
