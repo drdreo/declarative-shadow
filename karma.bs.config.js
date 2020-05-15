@@ -1,7 +1,7 @@
 
 
-process.env.BROWSER_STACK_USERNAME = "drdreo1";
-process.env.BROWSER_STACK_ACCESS_KEY = "YNZDx8z1XVhtQRBLo5dd";
+process.env.BROWSER_STACK_USERNAME = "USERNAME";
+process.env.BROWSER_STACK_ACCESS_KEY = "ACCESSKEY";
 
 /* eslint-disable import/no-extraneous-dependencies */
 const merge = require("deepmerge");
