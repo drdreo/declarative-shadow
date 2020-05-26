@@ -1,8 +1,10 @@
 import {elementUpdated, expect, fixture, html} from "@open-wc/testing";
 
 import "../src/index";
+// Thanks to Tomek Wytrębowicz for defining some of the mentioned scenarios 
 // https://gist.github.com/tomalec/a20af4eee86640defdc7aeccccc78c1c#file-declarative-shadow-dom-test-html-L8-L12
 
+// Example on how to utlize the tools for testing a Web Component
 // describe("Ordinary Web Component", async () => {
 //     it("should have a shadowRoot", async () => {
 //         const el = await fixture(html`
