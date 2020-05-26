@@ -152,17 +152,43 @@
         <div>Light content</div>
     </my-test>
 
+    <h1>Text nodes</h1>
+    <div>
+        <shadow-root mode="open">
+            Hallo There!
+            Nice right?
+        </shadow-root>
+        light text node
+    </div>
     <h1>Ordinary Component</h1>
     <ordinary-component></ordinary-component>
 
+    <h1>Custom element with shadow-root</h1>
+    <hello-world>
+        <shadow-root mode="open">
+            Hello <slot></slot>
+        </shadow-root>
+        World
+    </hello-world>
 </div>
 <script type="module">
-    import "../src/index";
+    import "../src/index.js";
 
     // clone the template and stamp it
     const tpl = document.querySelector("#template");
     const parent = tpl.parentNode;
     parent.appendChild(tpl.content.cloneNode(true));
+
+
+    customElements.define('hello-world', class extends HTMLElement {
+        constructor(){
+            super();
+            if(!this.shadowRoot){
+                this.attachShadow({mode: 'open'});
+            }
+            this.shadowRoot.innerHTML = 'Hello <slot></slot>';
+        }
+    });
 </script>
 </body>
 

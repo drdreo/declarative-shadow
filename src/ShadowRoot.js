@@ -18,6 +18,7 @@ export class ShadowRoot extends HTMLElement {
         // if there is an invalid mode, remain inert
         const mode = this.getAttribute("mode");
         if (mode !== "open" && mode !== "closed") {
+            console.warn("No 'mode' present!");
             return;
         }
 

@@ -1,6 +1,6 @@
 import {ShadowRoot} from "./ShadowRoot.js";
 import {OrdinaryComponent} from "./OrdinaryComponent.js";
-import DeclarativeShadowDOM from "./declarative-shadow-dom";
+import DeclarativeShadowDOM from "./declarative-shadow-dom.js";
 
 customElements.define("shadow-root", ShadowRoot);
 customElements.define("ordinary-component", OrdinaryComponent);

@@ -29,36 +29,45 @@
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
-                    <li>Web Component</li>
+                    <li>Web Components</li>
                 </ul>
             </div>
         </shadow-root>
         <div slot="header">John D. Eveloper</div>
     </div>
 
-    <!--    <h1 class="header">Profile Card without Shadow Root</h1>-->
-    <!--    <div class="profile-card">-->
-    <!--        <link rel="stylesheet" type="text/css" href="card.css">-->
-    <!--        <div class="header">-->
-    <!--            <slot name="header"></slot>-->
-    <!--            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"-->
-    <!--                 alt="Albert Einstein"/>-->
-    <!--        </div>-->
-    <!--        <div class="container">-->
-    <!--            <p>Web Developer</p>-->
-    <!--            <ul>-->
-    <!--                <li>HTML</li>-->
-    <!--                <li>CSS</li>-->
-    <!--                <li>Web Component</li>-->
-    <!--            </ul>-->
-    <!--        </div>-->
-    <!--        <div slot="header">Andreas Hahn (light)</div>-->
-    <!--    </div>-->
+    <h1>Profile Card WC</h1>
+    <profile-card>
+        <div slot="header">John D. Eveloper</div>
+    </profile-card>
 </div>
 
 
 <script type="module">
-    import "../../src";
+    import "../../src/index.js";
+
+    customElements.define("profile-card", class extends HTMLElement {
+        constructor() {
+            super();
+            if (!this.shadowRoot) {
+                this.attachShadow({mode: "open"});
+            }
+            this.shadowRoot.innerHTML = `<link rel="stylesheet" type="text/css" href="card.css">
+            <div class="header">
+                <slot name="header"></slot>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
+                     alt="Albert Einstein"/>
+            </div>
+            <div class="container">
+                <p>Web Developer</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Web Components</li>
+                </ul>
+            </div>`;
+        }
+    });
 </script>
 </body>
 </html>
