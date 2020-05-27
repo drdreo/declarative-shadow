@@ -1,4 +1,4 @@
-# \<shadow-root>
+# Declarative Shadow Root (DSR) \<shadow-root>
 
 [![Build Status](https://travis-ci.com/drdreo/declarative-shadow.svg?branch=master)](https://travis-ci.com/drdreo/declarative-shadow)
 
@@ -25,6 +25,19 @@ npm i
   import 'shadow-root.js';
 </script>
 ```
+
+## Folder structure
+
+* demo  - the demo files are located here
+  * performance -- a HTML file containing a lot of shadow-root elements
+  * profile -- an example how to utilise the element for a profile-card
+  * index.html -- the demo playground where you can test and expirement with the element freely
+* perf  - the performance benchmark using [tachometer](https://www.npmjs.com/package/tachometer)
+* src   - the source files for the DSR element
+  * declarative-shadow-dom.js -- a third party solution employing a template element
+  * index.js -- registering all custom elements for easier access
+  * OrdinaryComponent.js -- an ordinary Web Component to test use cases combined with a DSR
+* test  - the unit tests which are run by the travis CI. Using @open-wc/testing
 
 # Running
 ## Local Demo with `es-dev-server`
