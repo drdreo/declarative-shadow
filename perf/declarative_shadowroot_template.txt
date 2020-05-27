@@ -1,0 +1,6 @@
+<div>
+    <shadow-root mode="open">
+        <slot></slot>
+    </shadow-root>
+    <span>${copy_num}</span>
+</div>

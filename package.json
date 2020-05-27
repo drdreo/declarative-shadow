@@ -22,5 +22,8 @@
     "deepmerge": "^3.2.0",
     "es-dev-server": "^1.23.0",
     "lit-html": "^1.1.2"
+  },
+  "dependencies": {
+    "tachometer": "^0.4.18"
   }
 }

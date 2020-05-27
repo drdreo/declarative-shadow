@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+
+<H3>Shadow root creation speed test</H3>
+<div id=log>Running...</div>
+
+<script>
+  const log = document.getElementById('log');
+  const startTime = performance.now();
+  window.addEventListener("load", ev => {
+    const elapsedMs = performance.now() - startTime;
+    window.tachometerResult = elapsedMs;
+    log.textContent = `Elapsed time: ${Math.round(elapsedMs)}ms`;
+  });
+</script>
+
+<!-- 100 copies below... -->
+
+<div id=suppress_layout style="display:none; contain:strict;">
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>0</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>1</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>2</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>3</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>4</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>5</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>6</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>7</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>8</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>9</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>10</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>11</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>12</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>13</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>14</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>15</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>16</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>17</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>18</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>19</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>20</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>21</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>22</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>23</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>24</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>25</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>26</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>27</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>28</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>29</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>30</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>31</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>32</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>33</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>34</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>35</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>36</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>37</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>38</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>39</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>40</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>41</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>42</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>43</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>44</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>45</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>46</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>47</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>48</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>49</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>50</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>51</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>52</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>53</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>54</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>55</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>56</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>57</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>58</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>59</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>60</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>61</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>62</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>63</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>64</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>65</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>66</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>67</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>68</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>69</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>70</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>71</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>72</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>73</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>74</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>75</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>76</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>77</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>78</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>79</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>80</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>81</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>82</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>83</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>84</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>85</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>86</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>87</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>88</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>89</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>90</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>91</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>92</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>93</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>94</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>95</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>96</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>97</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>98</span>
+</div>
+<div>
+    <template>
+        <slot></slot>
+    </template>
+    <script>
+        var template = document.currentScript.previousElementSibling;
+        var shadowRoot = template.parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(template.content);
+        template.remove();
+        document.currentScript.remove();
+    </script>
+    <span>99</span>
+</div>
+    </div> <!-- id=suppress_layout -->

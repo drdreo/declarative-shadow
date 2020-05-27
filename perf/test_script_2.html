@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<H3>Shadow root creation speed test</H3>
+<div id=log>Running...</div>
+
+<script>
+  const log = document.getElementById('log');
+  const startTime = performance.now();
+  window.addEventListener("load", ev => {
+    const elapsedMs = performance.now() - startTime;
+    window.tachometerResult = elapsedMs;
+    log.textContent = `Elapsed time: ${Math.round(elapsedMs)}ms`;
+  });
+</script>
+
+<!-- 100 copies below... -->
+
+<div id=suppress_layout style="display:none; contain:strict;">
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>0</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>1</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>2</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>3</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>4</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>5</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>6</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>7</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>8</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>9</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>10</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>11</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>12</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>13</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>14</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>15</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>16</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>17</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>18</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>19</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>20</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>21</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>22</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>23</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>24</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>25</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>26</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>27</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>28</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>29</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>30</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>31</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>32</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>33</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>34</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>35</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>36</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>37</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>38</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>39</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>40</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>41</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>42</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>43</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>44</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>45</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>46</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>47</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>48</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>49</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>50</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>51</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>52</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>53</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>54</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>55</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>56</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>57</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>58</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>59</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>60</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>61</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>62</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>63</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>64</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>65</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>66</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>67</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>68</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>69</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>70</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>71</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>72</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>73</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>74</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>75</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>76</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>77</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>78</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>79</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>80</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>81</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>82</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>83</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>84</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>85</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>86</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>87</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>88</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>89</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>90</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>91</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>92</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>93</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>94</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>95</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>96</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>97</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>98</span>
+</div>
+<div>
+    <template class=shadowroot>
+        <slot></slot>
+    </template>
+    <span>99</span>
+</div>
+    </div> <!-- id=suppress_layout -->
+<script>
+    const shadowroots = document.querySelectorAll('.shadowroot');
+    for (var i=0; i<shadowroots.length; ++i) {
+        const shadowRoot = shadowroots[i].parentElement.attachShadow({mode: "open"});
+        shadowRoot.appendChild(shadowroots[i].content);
+        shadowroots[i].remove();
+    }
+    document.currentScript.remove();
+</script>
