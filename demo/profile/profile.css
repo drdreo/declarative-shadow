@@ -1,3 +1,13 @@
+:root {
+    --border-color: #e3e3e5;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #222;
 }
@@ -6,7 +16,7 @@ div, p, span, a {
     color: dodgerblue;
 }
 
-li {
+ul {
     color: dodgerblue;
 }
 
@@ -15,10 +25,24 @@ li {
 }
 
 .container {
-    padding: 2rem 5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
-    color: dodgerblue;
+    height: 100%;
+}
+
+.profile {
+    margin-top: 3rem;
+}
+
+.comments {
+    margin-top: 3rem;
+}
+
+.ad {
+    position: absolute;
+    right: 16px;
+    top: 10%;
+    height: 60vh;
 }

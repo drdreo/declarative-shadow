@@ -15,59 +15,74 @@
 
 <!--Slots dont make much sense in this use-case since the goal here is not to make them reusable, but to apply style encapsulation-->
 <div class="container">
-    <h1 class="header">Profile Card</h1>
-    <div class="profile-card">
+    <my-header></my-header>
+    <div class="profile">
         <shadow-root mode="open">
-            <link rel="stylesheet" type="text/css" href="card.css">
-            <div class="header">
-                <slot name="header"></slot>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
-                     alt="Albert Einstein"/>
+            <style>
+                :host {
+                    display: flex;
+                }
+            </style>
+            <div class="profile__card">
+                <shadow-root mode="open">
+                    <link rel="stylesheet" type="text/css" href="card.css">
+                    <div class="header">
+                        <slot name="header"></slot>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
+                             alt="Albert Einstein"/>
+                    </div>
+                    <div class="container">
+                        <p>Web Developer</p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Web Components</li>
+                        </ul>
+                    </div>
+                </shadow-root>
+                <div slot="header">John D. Eveloper</div>
             </div>
-            <div class="container">
-                <p>Web Developer</p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Web Components</li>
-                </ul>
+            <div class="profile__stats">
+                <shadow-root mode="open">
+                    <style>
+                        ul {
+                            list-style: none;
+                            margin: 0;
+                            color: #7a7a7a;
+                        }
+                    </style>
+                    <ul>
+                        <li>2 Posts</li>
+                        <li>5 Comments</li>
+                        <li>7 Followers</li>
+                    </ul>
+                </shadow-root>
             </div>
         </shadow-root>
-        <div slot="header">John D. Eveloper</div>
     </div>
-
-    <h1>Profile Card WC</h1>
-    <profile-card>
-        <div slot="header">John D. Eveloper</div>
-    </profile-card>
+    <my-comments class="comments"></my-comments>
+    <div class="ad">
+        <shadow-root mode="open">
+            <link rel="stylesheet" type="text/css" href="ad.css">
+            <p>
+                The latest <br>
+                <b>NEWS,</b>
+                <b>VIDEOS</b>
+                <b>& MORE</b>
+                <button>STAY UP TO DATE</button>
+            </p>
+        </shadow-root>
+    </div>
+    <my-footer></my-footer>
 </div>
 
 
 <script type="module">
     import "../../src/index.js";
+    import "./header.js";
+    import "./footer.js";
+    import "./comments.js";
 
-    customElements.define("profile-card", class extends HTMLElement {
-        constructor() {
-            super();
-            if (!this.shadowRoot) {
-                this.attachShadow({mode: "open"});
-            }
-            this.shadowRoot.innerHTML = `<link rel="stylesheet" type="text/css" href="card.css">
-            <div class="header">
-                <slot name="header"></slot>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
-                     alt="Albert Einstein"/>
-            </div>
-            <div class="container">
-                <p>Web Developer</p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Web Components</li>
-                </ul>
-            </div>`;
-        }
-    });
 </script>
 </body>
 </html>

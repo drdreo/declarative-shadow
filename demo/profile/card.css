@@ -36,7 +36,7 @@ p {
 ::slotted([slot="header"]) {
     padding: 1rem 0;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .header {

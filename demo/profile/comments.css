@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+div {
+    margin: 1rem 0;
+}
+
+p {
+    color: #222;
+}
