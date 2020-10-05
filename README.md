@@ -5,6 +5,19 @@
 This is a protoype repository to test and showcase the functionality and needs of a declarative shadow DOM approach discussed at [GitHub](https://github.com/whatwg/dom/issues/510).
 It's coherent with my master thesis: "Declarative Shadow Root"
 
+
+# Abstract
+Web Components complement client-side web development with a native component model. However, as of today, the interest in adopting the web standard is still limited
+because of disadvantages such as server-side rendering. The idea of it is nothing new, but it has been said that Web Components can not be rendered on the server due to the lack
+of a declarative representation of a shadow DOM. The purpose of a declarative approach is to empower non-scripting environments with the features Web Components provide,
+especially the encapsulation aspect of the shadow DOM. This would also enhance serverside pre-rendering ofWeb Components and additionally push the adoption of this feature
+further among the web community. A declarative shadow root can potentially establish a new way of attaching a shadow DOM additionally to the imperative way. The goal is
+not to replace the current mechanism, but to expand the use cases of the shadow DOM. 
+
+The original proposal of a declarative shadow DOM was declined in 2019 by browser
+vendors and web specification developers due to implementation costs. The main aim of this thesis is to create a reasonable prototype, point out the advantages and disadvantages
+of a declarative approach as well as provide reasons to reconsider developing it.
+
 ## Installation
 ```bash
 npm i
