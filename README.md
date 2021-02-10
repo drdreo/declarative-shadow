@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/drdreo/declarative-shadow.svg?branch=master)](https://travis-ci.com/drdreo/declarative-shadow)
 
 This is a protoype repository to test and showcase the functionality and needs of a declarative shadow DOM approach discussed at [GitHub](https://github.com/whatwg/dom/issues/510).
-It's coherent with my master thesis: "Declarative Shadow Root"
+It's coherent with my master thesis: ["Application of a Declarative Shadow DOM for the Definition of Web Components"](https://github.com/drdreo/declarative-shadow/blob/master/Application_of_a_Declarative_Shadow_DOM_for_the_Definition_of_Web_Components_Hahn.pdf)
 
 
 # Abstract
