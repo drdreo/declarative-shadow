@@ -5,6 +5,7 @@
 This is a protoype repository to test and showcase the functionality and needs of a declarative shadow DOM approach discussed at [GitHub](https://github.com/whatwg/dom/issues/510).
 It's coherent with my master thesis: ["Application of a Declarative Shadow DOM for the Definition of Web Components"](https://github.com/drdreo/declarative-shadow/blob/master/Application_of_a_Declarative_Shadow_DOM_for_the_Definition_of_Web_Components_Hahn.pdf)
 
+Chrome will already ship this feature in Chrome 90 driven by Mason Freed https://www.chromestatus.com/feature/5191745052606464
 
 # Abstract
 Web Components complement client-side web development with a native component model. However, as of today, the interest in adopting the web standard is still limited
