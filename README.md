@@ -19,6 +19,10 @@ The original proposal of a declarative shadow DOM was declined in 2019 by browse
 vendors and web specification developers due to implementation costs. The main aim of this thesis is to create a reasonable prototype, point out the advantages and disadvantages
 of a declarative approach as well as provide reasons to reconsider developing it.
 
+
+# TL;DR
+> DSD is effectively just a declarative form of .attachShadow(...) with a couple tweaks to make it work nicely with existing .attachShadow calls.
+
 ## Installation
 ```bash
 npm i
